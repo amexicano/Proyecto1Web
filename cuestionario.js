@@ -10,9 +10,6 @@ function addOnClickEvent() {
         const input = sec.querySelector('input');
         options.forEach((opt, j) =>
             opt.addEventListener('click', () => {
-                input.name = i;
-                input.value = j;
-
                 answers[i] = j;
                 checkValidity();
                 setStyles();
@@ -35,5 +32,34 @@ function setStyles() {
     //Se seleccionan todas las que están guardadas en answers
     answers.forEach((ans, i) => {
         elements[i][ans].className = 'options selected';
+    });
+}
+
+function countOptions(form) {
+    const counts = {
+        a: 0,
+        b: 0,
+        c: 0,
+        d: 0
+    };
+    answers.forEach(ans => {
+        if (ans == 0)
+            counts.a++;
+        else if (ans == 1)
+            counts.b++;
+        else if (ans == 2)
+            counts.c++;
+        else if (ans == 3)
+            counts.d++;
+    });
+
+    const input = document.createElement('input');
+    input.type = 'hidden'
+
+    Object.entries(counts).forEach(([k, v]) => {
+        const clone = input.cloneNode(true);
+        clone.name = k;
+        clone.value = v;
+        form.appendChild(clone);
     });
 }
