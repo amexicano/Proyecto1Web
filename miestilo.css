@@ -1,0 +1,158 @@
+* {
+	font-family: Helvetica, Georgia, "Times New Roman", Times, serif;
+}
+
+h1 {
+	font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	/* background: linear-gradient(-45deg, #f2f23c 50%, #cfe503 66.67%, #abd800 83.33%, #85cd00 100%); */
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+
+}
+
+header {
+	border-radius: 1em;
+	padding: 1em 1.5em;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1em;
+	background: linear-gradient(-45deg, #f2f23c 50%, #cfe503 66.67%, #abd800 83.33%, #85cd00 100%);
+	color: rgb(0, 0, 0);
+}
+
+header h1 {
+	font-size: 2em;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	margin: 0 5em;
+	margin-bottom: 5em;
+	background: #fff;
+	padding: 1em;
+	border-radius: 1em;
+	box-shadow: 0 0 .5em rgba(0, 0, 0, .5);
+}
+
+section {
+	box-sizing: content-box;
+	padding: 1em;
+	border-radius: .5em;
+	background: #ffff5f;
+	box-shadow: 0 0 .25em rgba(61, 80, 26, 0.5);
+}
+
+section:hover {
+	box-shadow: 0 0 .25em rgba(61, 80, 26, 0.75);
+}
+
+.right {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.top-description {
+	border-top: rgb(84, 88, 21) solid 1px;
+}
+
+footer {
+	/* Fixed to bottom */
+	display: flex;
+	flex-direction: row-reverse;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	border-radius: .45em;
+	background: linear-gradient(-45deg, #f2f23c 50%, #cfe503 66.67%, #abd800 83.33%, #85cd00 100%);
+}
+
+.relative-footer {
+	position: relative;
+}
+
+.fixed-footer {
+	position: fixed;
+}
+
+footer>* {
+	padding: .25em 1em;
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 1em;
+	list-style-type: none;
+	overflow: hidden;
+}
+
+nav li:first-child {
+	margin-left: 0;
+}
+
+nav li:last-child {
+	margin-right: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:link,
+a:visited {
+
+	color: rgba(10, 62, 97, 0.788)
+}
+
+ul {
+	list-style-type: upper-alpha;
+	list-style-position: inside;
+	padding: 0 20px;
+}
+
+.options {
+	margin: 5px 0px;
+	padding: 5px;
+	border-radius: 5px;
+	border: blue solid 1px;
+}
+
+.unselected:hover {
+	animation: color-fade 0.2s linear both;
+}
+
+.selected {
+	background-color: blue;
+	color: white;
+}
+
+@keyframes color-fade {
+	100% {
+		background-color: rgb(126, 126, 255);
+		color: white;
+	}
+}
+
+#button-div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#button-div input {
+	font-size: 1em;
+}
