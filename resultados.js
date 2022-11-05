@@ -17,6 +17,19 @@ function writeResults() {
     // Search for the highest value
     let max = Math.max(...values);
     // Search for the highest value's index
-    let max_index = values.indexOf(max);
-    document.getElementById('resultado').innerHTML = max_index;
+    let indexes = findIndexesOf(max);
+    document.getElementById('resultado').innerHTML = indexes;
+}
+
+function findIndexesOf(max) {
+    let i = -1;
+    let indexes = [];
+    while (true) {
+        i = values.indexOf(max, i+1);
+        if (i != -1)
+            indexes.push(i);
+        else
+            break;
+    }
+    return indexes;
 }
